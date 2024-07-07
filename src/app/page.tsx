@@ -1,10 +1,24 @@
 import Image from "next/image";
 import Link from "next/link";
-import { GlobeDemo } from "./components/GlobeDemo";
+import { GlobeDemo } from "@/app/components/GlobeDemo";
+import {
+  CodeBracketIcon,
+  GlobeAltIcon,
+  ShieldCheckIcon,
+  CpuChipIcon,
+  WindowIcon,
+  CubeTransparentIcon,
+  KeyIcon,
+  CloudIcon,
+  CircleStackIcon,
+  ServerIcon,
+} from "@heroicons/react/24/outline";
+import { metadata } from "./metadata";
+export { metadata };
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-blue-50">
+    <div className="min-h-screen bg-blue-50 dark:bg-gray-900">
       <header className="container mx-auto px-4 py-6 flex items-center justify-between">
         <div className="flex items-center">
           <Image
@@ -13,23 +27,25 @@ export default function Home() {
             width={40}
             height={40}
           />
-          <span className="ml-2 font-bold">SEVEN7TRADES</span>
+          <span className="ml-2 font-bold text-black dark:text-white">
+            SEVEN7TRADES
+          </span>
         </div>
-        <button className="bg-blue-100 text-black px-4 py-2 rounded-md hover:bg-gray-100">
-          Join us
-        </button>
       </header>
 
       <main className="container mx-auto px-4 py-12 md:flex items-center">
         <div className="md:w-1/2">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-black dark:text-white">
             Tailor your digital space
           </h1>
-          <p className="mb-6">
-            Leveraging open-source technology to provide cybersecurity tools,
-            digital forensic analysis free - legal scholar support for law
-            students, IN-HOUSE Legal fo Business and innovative transport
-            solutions through open-source applications and specialised services.
+          <blockquote className="border-l-4 border-blue-500 pl-4 italic my-4">
+            <p className="text-gray-700 dark:text-gray-300">
+              Connected by innovation, empowered by open source.
+            </p>
+          </blockquote>
+          <p className="mb-6 text-gray-600 dark:text-gray-400">
+            Expanding horizons, sharing solutions - because progress is
+            universal.
           </p>
         </div>
         <div className="md:w-1/2 mt-8 md:mt-0">
@@ -44,27 +60,34 @@ export default function Home() {
       <section>
         <GlobeDemo />
       </section>
-      <footer className="bg-blue-50 text-black py-6 mt-8">
+      <footer className="bg-blue-50 dark:bg-gray-800 text-black dark:text-white py-6 mt-8">
         <div className="container mx-auto px-4 text-center">
           <p className="mb-4">
             We extend our heartfelt thanks to our sponsors and acknowledge the
-            incredible contributions of the following open-source projects:
+            incredible contributions of the following open-source technologies:
           </p>
           <div className="flex flex-wrap justify-center items-center space-x-4 mb-4">
-            <span className="text-xs md:text-sm lg:text-base">Python</span>
-            <span className="text-xs md:text-sm lg:text-base">Next.js</span>
-            <span className="text-xs md:text-sm lg:text-base">Wazuh</span>
-            <span className="text-xs md:text-sm lg:text-base">OLLama</span>
-            <span className="text-xs md:text-sm lg:text-base">OpenWebUI</span>
-            <span className="text-xs md:text-sm lg:text-base">
-              Aceternity UI
-            </span>
-            <span className="text-xs md:text-sm lg:text-base">OAuth</span>
-          </div>
-          <div className="flex flex-wrap justify-center items-center space-x-4">
-            <Image src="" alt="Logo 1" width={40} height={40} className="m-2" />
-            <Image src="" alt="Logo 2" width={40} height={40} className="m-2" />
-            {/* Add more logos as needed */}
+            {/* Technology icons */}
+            {[
+              { icon: CodeBracketIcon, name: "Python" },
+              { icon: GlobeAltIcon, name: "Next.js" },
+              { icon: ShieldCheckIcon, name: "Wazuh" },
+              { icon: CpuChipIcon, name: "OLLama" },
+              { icon: WindowIcon, name: "OpenWebUI" },
+              { icon: CubeTransparentIcon, name: "Aceternity UI" },
+              { icon: KeyIcon, name: "OAuth" },
+              { icon: CloudIcon, name: "AWS" },
+              { icon: CircleStackIcon, name: "PostgreSQL" },
+              { icon: ServerIcon, name: "Docker" },
+              { icon: GlobeAltIcon, name: "Cloudflare" },
+            ].map((tech, index) => (
+              <div key={index} className="flex flex-col items-center">
+                <tech.icon className="h-6 w-6 text-gray-600 dark:text-gray-400" />
+                <span className="text-xs md:text-sm lg:text-base mt-1">
+                  {tech.name}
+                </span>
+              </div>
+            ))}
           </div>
         </div>
       </footer>
