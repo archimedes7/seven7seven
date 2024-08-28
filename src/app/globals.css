@@ -4,24 +4,17 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --background-rgb: 239, 246, 255;
 }
 
-.dark {
+[data-theme="dark"] {
   --foreground-rgb: 255, 255, 255;
-  --background-start-rgb: 0, 0, 0;
-  --background-end-rgb: 0, 0, 0;
+  --background-rgb: 17, 24, 39;
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: rgb(var(--background-rgb));
 }
 
 @layer utilities {
@@ -50,14 +43,14 @@ body {
 }
 
 /* For dark mode */
-.dark .subtle-links {
+[data-theme="dark"] .subtle-links {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
-.dark .subtle-link {
+[data-theme="dark"] .subtle-link {
   color: rgba(255, 255, 255, 0.8);
 }
 
-.dark .subtle-link:hover {
+[data-theme="dark"] .subtle-link:hover {
   color: rgba(255, 255, 255, 1);
 }

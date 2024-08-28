@@ -1,18 +1,7 @@
-import Image from "next/image";
-import Link from "next/link";
-import { GlobeDemo } from "@/app/components/GlobeDemo";
-import {
-  CodeBracketIcon,
-  GlobeAltIcon,
-  ShieldCheckIcon,
-  CpuChipIcon,
-  WindowIcon,
-  CubeTransparentIcon,
-  KeyIcon,
-  CloudIcon,
-  CircleStackIcon,
-  ServerIcon,
-} from "@heroicons/react/24/outline";
+import { SevenDemo } from "@/app/components/SevenDemo";
+import { InfiniteMovingIcons } from "@/app/components/InfiniteMovingIcons";
+import CollaborationCTA from "@/app/components/CollaborationCTA";
+import { LegalModal } from "./components/LegalModal";
 import { metadata } from "./metadata";
 export { metadata };
 
@@ -21,14 +10,8 @@ export default function Home() {
     <div className="min-h-screen bg-blue-50 dark:bg-gray-900">
       <header className="container mx-auto px-4 py-6 flex items-center justify-between">
         <div className="flex items-center">
-          <Image
-            src="/sevenlogo.png"
-            alt="Seven Trades Logo"
-            width={40}
-            height={40}
-          />
           <span className="ml-2 font-bold text-black dark:text-white">
-            SEVEN7TRADES
+            seven7trades
           </span>
         </div>
       </header>
@@ -48,49 +31,87 @@ export default function Home() {
             universal.
           </p>
         </div>
-        <div className="md:w-1/2 mt-8 md:mt-0">
-          <Image
-            src="/tailor.png"
-            alt="Digital Space Illustration"
-            width={500}
-            height={400}
-          />
-        </div>
       </main>
-      <section>
-        <GlobeDemo />
+
+      <section className="py-12">
+        <SevenDemo />
       </section>
-      <footer className="bg-blue-50 dark:bg-gray-800 text-black dark:text-white py-6 mt-8">
-        <div className="container mx-auto px-4 text-center">
-          <p className="mb-4">
-            We extend our heartfelt thanks to our sponsors and acknowledge the
-            incredible contributions of the following open-source technologies:
-          </p>
-          <div className="flex flex-wrap justify-center items-center space-x-4 mb-4">
-            {/* Technology icons */}
-            {[
-              { icon: CodeBracketIcon, name: "Python" },
-              { icon: GlobeAltIcon, name: "Next.js" },
-              { icon: ShieldCheckIcon, name: "Wazuh" },
-              { icon: CpuChipIcon, name: "OLLama" },
-              { icon: WindowIcon, name: "OpenWebUI" },
-              { icon: CubeTransparentIcon, name: "Aceternity UI" },
-              { icon: KeyIcon, name: "OAuth" },
-              { icon: CloudIcon, name: "AWS" },
-              { icon: CircleStackIcon, name: "PostgreSQL" },
-              { icon: ServerIcon, name: "Docker" },
-              { icon: GlobeAltIcon, name: "Cloudflare" },
-            ].map((tech, index) => (
-              <div key={index} className="flex flex-col items-center">
-                <tech.icon className="h-6 w-6 text-gray-600 dark:text-gray-400" />
-                <span className="text-xs md:text-sm lg:text-base mt-1">
-                  {tech.name}
-                </span>
-              </div>
-            ))}
+      <CollaborationCTA />
+      <div>
+        {/* Primary Footer */}
+        <footer className="bg-gray-900 dark:bg-gray-900 text-gray-100 py-6">
+          <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between">
+            <div className="mb-4 md:mb-0">
+              <h3 className="font-bold text-lg">seven7trades</h3>
+              <p className="text-sm">Copyright © 2024 seven7trades</p>
+              <p className="text-sm">All rights reserved</p>
+            </div>
+            <div className="mb-4 md:mb-0">
+              <h4 className="font-semibold text-sm">Company</h4>
+              <ul className="text-sm">
+                <li>
+                  <a href="/blog" className="hover:text-gray-400">
+                    About
+                  </a>
+                </li>
+                <li>
+                  <a href="/comingsoon" className="hover:text-gray-400">
+                    Coming Soon
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div className="mb-4 md:mb-0">
+              <h4 className="font-semibold text-sm">Legal</h4>
+              <ul className="text-sm">
+                <li>
+                  <LegalModal />
+                </li>
+                <li>
+                  <a href="#contact" className="hover:text-gray-400">
+                    Contact
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold text-sm">Social</h4>
+              <ul className="text-sm">
+                <li>
+                  <a href="#twitter" className="hover:text-gray-400">
+                    Twitter
+                  </a>
+                </li>
+                <li>
+                  <a href="#linkedin" className="hover:text-gray-400">
+                    LinkedIn
+                  </a>
+                </li>
+                <li>
+                  <a href="#github" className="hover:text-gray-400">
+                    GitHub
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
-        </div>
-      </footer>
+        </footer>
+
+        {/* Secondary Footer with Technology Acknowledgments */}
+        <footer className="bg-gray-800 text-white py-10">
+          <div className="container mx-auto px-4 text-center">
+            <p className="text-lg mb-4">
+              Powered by Open Source and Global Leading Technologies
+            </p>
+            <InfiniteMovingIcons
+              direction="left"
+              speed="normal"
+              pauseOnHover={true}
+              className="py-4"
+            />
+          </div>
+        </footer>
+      </div>
     </div>
   );
 }
