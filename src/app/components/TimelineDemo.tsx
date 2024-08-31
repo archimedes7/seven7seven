@@ -16,25 +16,31 @@ const teamMembers = [
     id: 2,
     name: "Alyssa",
     designation: "Co-Founder, Project Manager",
-    image: "/jane-smith.jpg",
+    image: "/alyssa-avatar.jpg",
   },
   {
     id: 3,
     name: "Angel",
     designation: "Data Scientist",
-    image: "/alex-johnson.jpg",
+    image: `https://api.dicebear.com/6.x/initials/svg?seed=Angel`,
   },
   {
     id: 4,
     name: "Anj",
     designation: "FrontEnd Developer",
-    image: "/alex-johnson.jpg",
+    image: `https://api.dicebear.com/6.x/initials/svg?seed=Anj`,
   },
   {
     id: 5,
     name: "Arnie",
     designation: "Marketing Manager",
-    image: "/alex-johnson.jpg",
+    image: `https://api.dicebear.com/6.x/initials/svg?seed=Arnie`,
+  },
+  {
+    id: 6,
+    name: "Christopher",
+    designation: "Safety Officer, Security Manager",
+    image: `https://api.dicebear.com/6.x/initials/svg?seed=Christopher`,
   },
   // Add more team members as needed
 ];
