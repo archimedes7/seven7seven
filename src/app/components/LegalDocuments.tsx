@@ -47,9 +47,10 @@ These Terms of Service comply with the Consumer Act of the Philippines (Republic
 If you have any questions about these Terms, please contact us at:
 
 www.seven7trades.com
-Mandaluyong, Metro Manila
+Manila, Philippines
 Email: information@seven7trades.com
-Phone: +63 917 123 4567
+Phone: +63 994 298 1673
+Chat: https://t.me/seven7trades
   `;
 
   const privacyPolicy = `
@@ -98,9 +99,10 @@ Under the Data Privacy Act of 2012, you have the right to access, modify, erase 
 If you have any questions about this Privacy Policy, please contact us at:
 
 www.seven7trades.com
-Mandaluyong, Metro Manila
+Metro Manila, Philippines
 Email: information@seven7trades.com
-Phone: +63 917 123 4567
+Phone: +63 994 2981673
+Chat: https://t.me/seven7trades
   `;
 
   const renderContent = (content) => {
